@@ -31,9 +31,9 @@ function generateHTML(data) {
           padding: 10px 15px;
           }
           h3 {
-            font-size: 20pt;
-            padding: 10px 15px;
-              }
+          font-size: 20pt;
+          padding: 10px 15px;
+            }
           p {
           font-size: 14pt;
           margin: 5px 15px;
@@ -43,12 +43,11 @@ function generateHTML(data) {
             color: black;
           }
           .jumbotron{
-              text-align: center;
-          }
-          .jumbotron{
-              background-color: #ebebeb;
+              background-color: #3f3f3f;
               padding-top: 60px;
               padding-bottom: 60px;
+              color:white;
+              text-align: center;
           }
           .team{
             margin: 60px auto;
@@ -71,14 +70,17 @@ function generateHTML(data) {
            #manager h2{
              background-color: #658762;
              padding-top: 30px;
+             padding-bottom: 25px;
            } 
            #engineer h2{
             background-color: #67749d;
             padding-top: 30px;
+            padding-bottom: 25px;
           } 
           #intern h2{
             background-color: #9f9e94;
             padding-top: 30px;
+            padding-bottom: 25px;
           } 
         </style>      
       </head>

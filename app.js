@@ -5,7 +5,6 @@ const util = require("util");
 const questions = require("./questions.js");
 const generateHTML = require("./generateHTML.js");
 const employeeTemplate = require("./template/employeeTemplate.js");
-
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -54,7 +53,7 @@ async function promptUser() {
     // employeeTemplate(intern);
     console.log(intern);
     const profile = generateHTML(intern);
-    writeFileAsync("./public/index.html", profile);
+    writeFileAsync("./index.html", profile);
   }
 
   // const profile = generateHTML(manager);

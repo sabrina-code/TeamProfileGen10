@@ -3,11 +3,11 @@ let joinHtml = "";
 let positionInfo = "";
 const employeeTemplate = data => {
   if (data.getRole() === "manager") {
-    positionInfo = `office number: ${data.OfficeNumber}`;
+    positionInfo = `office no.: ${data.officeNumber}`;
   } else if (data.getRole() === "engineer") {
-    positionInfo = `github username: ${data.getGithub()}`;
+    positionInfo = `github: ${data.getGithub()}`;
   } else if (data.getRole() === "intern") {
-    positionInfo = `school name: ${data.school}`;
+    positionInfo = `school: ${data.school}`;
   }
 
   const markup =
