@@ -1,8 +1,4 @@
-const employeeTemplate = require("./template/employeeTemplate.js");
-
-function generateHTML(data) {
-  // $("#template").append(engTeam.html);
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
      <head>
         <meta charset="UTF-8" />
@@ -88,10 +84,37 @@ function generateHTML(data) {
         <h1 class="container">My Team</h1>
       </div>
       <div class="team container">
-      ${employeeTemplate(data)}
+      <div id="manager" class="infocard ">
+        <h2 class="">Sabrina Fan</h2>  
+        <h3 class="role">manager</h3>
+        <p class="">id: 22</p> 
+        <p class="">office number: undefined</p>                          
+        <p class="">email: sf@whatever.com</p>        
+        </div><div id="engineer" class="infocard ">
+        <h2 class="">James Kirk</h2>  
+        <h3 class="role">engineer</h3>
+        <p class="">id: 1</p> 
+        <p class="">github username: thegalaxy</p>                          
+        <p class="">email: jk@whatever.com</p>        
+        </div><div id="engineer" class="infocard ">
+        <h2 class="">Mr. Spock</h2>  
+        <h3 class="role">engineer</h3>
+        <p class="">id: 2</p> 
+        <p class="">github username: vulcan</p>                          
+        <p class="">email: ss@whatever.com</p>        
+        </div><div id="engineer" class="infocard ">
+        <h2 class="">Alpha Walker</h2>  
+        <h3 class="role">engineer</h3>
+        <p class="">id: 3</p> 
+        <p class="">github username: piano</p>                          
+        <p class="">email: aw@whatever.com</p>        
+        </div><div id="intern" class="infocard ">
+        <h2 class="">Scotty</h2>  
+        <h3 class="role">intern</h3>
+        <p class="">id: 1</p> 
+        <p class="">school name: The Beam</p>                          
+        <p class="">email: whoosh@yes.com</p>        
+        </div>
       </div>
       </body>
-  </html>`;
-}
-
-module.exports = generateHTML;
+  </html>

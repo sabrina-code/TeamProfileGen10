@@ -51,11 +51,6 @@ const engineerQuestions = [
       }
     }
   },
-  // {
-  //   type: "input",
-  //   name: "id",
-  //   message: "Please enter the engineer's id."
-  // },
   {
     type: "input",
     name: "email",
@@ -80,11 +75,6 @@ const internQuestions = [
         return name !== "";
       }
     }
-  },
-  {
-    type: "input",
-    name: "id",
-    message: "Please enter the intern's id."
   },
   {
     type: "input",

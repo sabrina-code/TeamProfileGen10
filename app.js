@@ -3,6 +3,9 @@ const inquirer = require("inquirer");
 const fs = require("fs-extra");
 const util = require("util");
 const questions = require("./questions.js");
+const generateHTML = require("./generateHTML.js");
+const employeeTemplate = require("./template/employeeTemplate.js");
+
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -19,30 +22,45 @@ async function promptUser() {
     managerInfo.officeNumber
   );
   console.log(manager);
+  employeeTemplate(manager);
 
+  ///ENGINEER---
+  let engineer;
   for (var i = 1; i <= managerInfo.numEngineer; i++) {
-    const engineerInfo = await inquirer.prompt(questions.engineerQuestions);
+    const engPrompt = await inquirer.prompt(questions.engineerQuestions);
+
     const engineer = new Engineer(
-      engineerInfo.name,
+      engPrompt.name,
       this.role,
-      (engineerInfo.id = i),
-      engineerInfo.email,
-      engineerInfo.github
+      (engPrompt.id = i),
+      engPrompt.email,
+      engPrompt.github
     );
     console.log(engineer);
+    employeeTemplate(engineer);
   }
 
+  ///INTERN---
+  let intern;
   for (var i = 1; i <= managerInfo.numIntern; i++) {
-    const internInfo = await inquirer.prompt(questions.internQuestions);
+    const intPrompt = await inquirer.prompt(questions.internQuestions);
     const intern = new Intern(
-      internInfo.name,
+      intPrompt.name,
       this.role,
-      (internInfo.id = i),
-      internInfo.email,
-      internInfo.school
+      (intPrompt.id = i),
+      intPrompt.email,
+      intPrompt.school
     );
+    // employeeTemplate(intern);
     console.log(intern);
+    const profile = generateHTML(intern);
+    writeFileAsync("./public/index.html", profile);
   }
+
+  // const profile = generateHTML(manager);
+  // employeeTemplate({ ...internPrompt });
+  // profile = generateHTML(manager);
+  // return writeFileAsync("./public/index.html", profile);
 }
 
 promptUser();
