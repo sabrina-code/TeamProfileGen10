@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "directories": {
-    "lib": "lib",
     "test": "test"
   },
   "scripts": {
@@ -16,9 +15,6 @@
   },
   "author": "sabrina",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
   "homepage": "",
   "dependencies": {
     "axios": "^0.19.2",
