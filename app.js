@@ -2,12 +2,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs-extra");
 const util = require("util");
-const questions = require("./questions.js");
+const questions = require("./query/questions.js");
 const generateHTML = require("./generateHTML.js");
 const employeeTemplate = require("./template/employeeTemplate.js");
-const Manager = require("./lib/manager");
-const Engineer = require("./lib/engineer");
-const Intern = require("./lib/intern");
+const Manager = require("./constructor/manager");
+const Engineer = require("./constructor/engineer");
+const Intern = require("./constructor/intern");
 const writeFileAsync = util.promisify(fs.writeFile);
 
 async function promptUser() {
@@ -55,11 +55,6 @@ async function promptUser() {
     const profile = generateHTML(intern);
     writeFileAsync("./index.html", profile);
   }
-
-  // const profile = generateHTML(manager);
-  // employeeTemplate({ ...internPrompt });
-  // profile = generateHTML(manager);
-  // return writeFileAsync("./public/index.html", profile);
 }
 
 promptUser();
